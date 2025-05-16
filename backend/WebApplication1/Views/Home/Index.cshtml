@@ -1,0 +1,65 @@
+﻿
+<link href="~/css/index.css" rel="stylesheet" />
+
+	<div id="hero-section">
+		<img src="~/imgs/hero-img.png" width="100%" height="100%">
+		<div class="hero-text">
+			<div class="hero-title">
+				<span>Wanderlust Lodge</span>
+			</div>
+			<div class="hero-desc">
+				<span>Лучшее место для вашего отдыха</span>
+			</div>
+			<div class="hero-btn-container">
+				<button class="hero-btn" onclick="slide()">
+					Забронировать
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="content">
+	@foreach (var room in ViewBag.rooms)
+	{
+		<div class="room-card">
+			<div class="room-image-container">
+					<img src="~/imgs/room1.png" width="100%" height="100%">
+				</div>
+				<div class="room-text-container">
+					<div class="room-title">
+						<span>Номер "@room.RoomType"</span>
+					</div>
+					<div class="room-description">
+					<span>@Html.Raw(room.Description.Split("<separator>")[0])</span>
+					</div>
+					<div class="room-advantages">
+						<ul>
+							@Html.Raw(room.Description.Split("<separator>")[1])
+						</ul>
+					</div>
+					<div class="room-price-container">
+						<div class="room-price">
+							<span>@room.Price руб\сутки</span>
+						</div>
+						<div class="room-pay-btn-container">
+							<form asp-controller="Home" asp-action="RoomDetail" method="post">
+								<input type="number" hidden name="room_id" id="room_id" value="@room.Id" />
+								<button class="pay-btn" type="submit">
+									Забронировать
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+
+<script>
+	function slide() {
+		document.getElementById("content").scrollIntoView({
+			behavior: "smooth",
+			block: "start"
+		});
+	}
+</script>

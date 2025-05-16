@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Отзывы";
+}
+
+@model ViewModels.ReviewModel
+
+<link rel="stylesheet" href="~/css/review.css" />
+
+<div id="content">
+    <div class="left-section">
+    @if (ViewBag.visitor != null)
+    {
+        <div class="reviews-title">
+            <span>Отзывы</span>
+        </div>
+            <div class="reviews-title">
+                <span>Ваш уникальный пароль: @ViewBag.visitor.Password</span>
+            </div>
+        <form method="post" asp-controller="Home" asp-action="NewReview">
+            <div class="review-text">
+                <textarea placeholder="Введите свой отзыв..." asp-for="ReviewText">
+
+                </textarea>
+            </div>
+            <div class="btn-container">
+                <input type="number" value="@ViewBag.visitor.Id" hidden asp-for="VisitorId"/>
+                <button type="submit">Опубликовать</button>
+            </div>
+
+        </form>
+    }
+    </div>
+
+    <div class="right-section">
+        <ul>
+            @for (int i = 0; i < ViewBag.reviews.Count; i++)
+            {
+                var review = ViewBag.reviews[i];
+                var visitor = ViewBag.visitors[i];
+                <li>
+                    <div class="review-card">
+                        <div class="review-profile-row">
+                            <img src="~/imgs/profile.png"/>
+                            <div class="visitor-name">
+                                <span>@visitor.Name</span>
+                            </div>
+                        </div>
+                        <div class="review-card-text">
+                            <p>
+                                @review.ReviewText
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

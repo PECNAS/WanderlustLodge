@@ -1,0 +1,67 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Bitter";
+	font-weight: 400;
+}
+
+button {
+	transition: .3s all;
+}
+
+button:hover {
+	cursor: pointer;
+	filter: opacity(.8);
+}
+
+
+header {
+	width: 100%;
+	height: 10vh;
+
+	display: flex;
+	position: fixed;
+	top: 0;
+
+	background: linear-gradient(90deg, rgba(85, 67, 45, .2) 37%, rgba(85, 67, 45, .8) 62%, rgba(85, 67, 45, .2) 100%);
+	z-index: 5;
+
+	transition: .5s all;
+}
+
+
+.nav-container {
+	min-width: 23vw;
+	height: 100%;
+	margin-left: 50vw;
+	display: flex;
+}
+
+.nav-element {
+	min-width: 7vw;
+	height: 100%;
+
+}
+
+.nav-element a {
+	display: inline-block;
+	margin-top: 3.4vh;
+
+	font-size: 1.2vw;
+	color: #FFFFFF;
+
+	text-decoration: none;
+}
+
+.contacts-container {
+	min-width: 12vw;
+	margin-left: auto;
+}
+
+.contacts-container span {
+	display: inline-block;
+	margin-top: 3.4vh;
+
+	font-size: 1.2vw;
+	color: #FFFFFF;
+}

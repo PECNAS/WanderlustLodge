@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+	<link href="~/css/header.css" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="~/css/fonts.css" />
+	<link type="text/css" rel="stylesheet" href="~/css/header.css" />
+</head>
+
+<body>
+	<header>
+		<div class="nav-container">
+			<div class="nav-element">
+				<a asp-controller="Home" asp-action="Index">Номера</a>
+			</div>
+			<div class="nav-element">
+				<a asp-action="Reviews" asp-controller="Home">Отзывы</a>
+			</div>
+		</div>
+		<div class="contacts-container">
+			<span>+7(952) 818-56-22</span>
+		</div>
+	</header>
+
+    @RenderBody()
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="~/js/header_scroll_script.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

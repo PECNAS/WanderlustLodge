@@ -1,0 +1,149 @@
+body {
+	background-color: #9F8060;
+}
+
+
+#hero-section {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.hero-text {
+	position: absolute;
+	left: 5vw;
+	top: 35vh;
+}
+
+.hero-title {
+	width: 20vw;
+}
+
+.hero-title span {
+	font-size: 3vw;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+
+.hero-desc {
+	width: 20vw;
+	margin-top: 4vh;
+
+}
+
+.hero-desc span {
+	font-size: 1.4vw;
+	color: #FFFFFF;
+	font-weight: 400;
+}
+
+.hero-btn-container {
+	width: 9vw;
+	margin-top: 4vh;
+}
+
+.hero-btn {
+	width: 100%;
+	height: 5vh;
+
+	font-size: 1vw;
+	border: none;
+	border-radius: .7vw;
+
+	background-color: #A66D28;
+	color: #FFFFFF;
+}
+
+#content {
+	width: 100%;
+	height: 100%;
+}
+
+.room-card {
+	width: 76vw;
+	min-height: 66vh;
+	display: flex;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10vh;
+
+	background: linear-gradient(90deg, rgba(85, 67, 45, .61) 0%, rgba(187, 148, 99, .4) 100%);
+
+	padding: 4vh 2vw 1vh .8vw;
+}
+
+.room-image-container {
+	width: 32vw;
+	height: 64vh;
+}
+
+
+.room-text-container {
+	width: 38vw;
+	height: 100%;
+	margin-left: 5vw;
+}
+
+.room-title {
+	width: 100%;
+	span {
+		font-size: 3.5vw;
+		font-weight: 700;
+		color: #FFFFFF;
+	}
+}
+
+.room-description {
+	width: 100%;
+	margin-top: 5vh;
+
+	span {
+		font-size: 1.5vw;
+		font-weight: 400;
+		color: #FFFFFF;
+	}
+}
+
+.room-advantages {
+	width: 100%;
+	margin-top: 5vh;
+	padding-left: 3vw;
+
+	font-size: 1.3vw;
+	color: white;
+
+	line-height: 4vh;
+}
+
+.room-price-container {
+	margin-top: 8vh;
+	display: flex;
+}
+
+.room-price {
+	span {
+		font-size: 1.5vw;
+		font-weight: 300;
+		color: #FFFFFF;
+	}
+}
+
+.room-pay-btn-container {
+	margin-left: 2vw;
+}
+
+.pay-btn {
+	width: 12vw;
+	height: 5vh;
+
+	color: #FFFFFF;
+	font-size: 1.1vw;
+	font-weight: 900;
+
+	border: none;
+	border-radius: .6vw;
+	background-color: #A66D28;
+
+}

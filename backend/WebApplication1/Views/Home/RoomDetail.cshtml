@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = ViewBag.room.RoomType;
+}
+
+@model ViewModels.DetailViewModel;
+
+<link href="~/css/detail.css" rel="stylesheet"/>
+
+<div id="content">
+    <div class="left-section">
+        <form method="post" asp-action="CreateReserve" asp-controller="Home">
+            <div class="section-title">
+                <span>Бронирование номера</span>
+            </div>
+            <div class="user-data">
+                <div class="user-input-container">
+                    <input asp-for="Name" autocomplete="off" placeholder="Фамилия Имя" class="user-input" />
+                </div>
+                <!--<div class="user-input-container">
+                    <input asp-for="SecondName" placeholder="Имя" class="user-input" />
+                </div>
+                <div class="user-input-container">
+                    <input asp-for="ThirdName" placeholder="Отчество" class="user-input" />
+                </div>-->
+                <div class="user-input-container">
+                    <input autocomplete="off" asp-for="PhoneNumber" placeholder="Номер телефона" class="user-input" />
+                </div>
+            </div>
+            <div class="calendar-container">
+                <div class="calendar-title">
+                    <span>Дата заезда</span>
+                </div>
+                <div id="calendar">
+                    <input asp-for="InDate" type="date"/>
+                </div>
+                <br />
+                <div class="calendar-title">
+                    <span>Дата выезда</span>
+                </div>
+                <div id="calendar">
+                    <input asp-for="OutDate" type="date" />
+                </div>
+            </div>
+            <div class="price-container">
+                <span class="room-price-counter">@ViewBag.room.Price руб/ночь * <span id="DaysCount">0</span></span>
+                <br />
+                <span class="room-price-all">Итого: <span id="FullPrice">0 руб.</span></span>
+            </div>
+            <div class="btn-container">
+                <!--<a asp-controller="Home" asp-action="CreateReserve">-->
+                    <input type="number" hidden value="@ViewBag.room.Id" asp-for="RoomId"/>
+                    <button type="submit" id="SendBtn">Зарезервировать</button>
+                <!--</a>-->
+            </div>
+        </form>
+    </div>
+    <div class="right-section">
+        <div class="room-card">
+            <div class="room-image">
+                <img src="~/imgs/room1.png" width="100%" height="100%"/>
+            </div>
+            <div class="room-title">
+                <span>Номер "@ViewBag.room.RoomType"</span>
+            </div>
+            <div class="room-description">
+                <span>@Html.Raw(ViewBag.room.Description.Split("<separator>")[0])</span>
+            </div>
+            <div class="room-advantages">
+                <ul>
+                    @Html.Raw(ViewBag.room.Description.Split("<separator>")[1])
+                </ul>
+            </div>
+            <div class="room-price">
+                <span>@ViewBag.room.Price руб.\ночь</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/js/validation.js"></script>
+<script type="text/javascript">
+    window.room_price = @ViewBag.room.Price;
+</script>
